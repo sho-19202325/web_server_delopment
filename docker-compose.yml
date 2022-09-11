@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+  java:
+    build: .
+    ports:
+      - 8081:8080
+    tty: true
+    volumes:
+      - ./server/src:/usr/src:cached
