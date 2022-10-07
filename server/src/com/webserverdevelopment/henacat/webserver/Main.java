@@ -1,3 +1,5 @@
+package com.webserverdevelopment.henacat.webserver;
+import com.webserverdevelopment.henacat.servletimpl.WebApplication;
 import java.net.*;
 
 public class Main {
@@ -7,7 +9,7 @@ public class Main {
 
     // webapplicationインスタンスにサーブレットを追加
     app.addServlet("/ShowBBS", "ShowBBS");
-    app.addServlet("/ShowBBS", "ShowBBS");
+    app.addServlet("/PostBBS", "PostBBS");
 
     try (ServerSocket server = new ServerSocket(8001)) {
       for (;;) {

@@ -1,3 +1,6 @@
+package com.webserverdevelopment.henacat.servletimpl;
+import com.webserverdevelopment.henacat.servlet.http.*;
+
 public class ServletInfo {
   WebApplication webApp;
   String urlPattern;

@@ -1,13 +1,14 @@
+package com.webserverdevelopment.henacat.webserver;
 import java.util.*;
 import java.io.*;
 import java.net.*;
 import java.nio.file.*;
+import com.webserverdevelopment.henacat.servletimpl.*;
+import com.webserverdevelopment.henacat.util.*;
 
 public class ServerThread implements Runnable { 
   private static final String DOCUMENT_ROOT = "/usr/src";
   private static final String ERROR_DOCUMENT = "/usr/src/error";
-  // TODO: Constants.javaに定義する
-  // private static final String SERVER_NAME = "localhost:8001";
   private Socket socket;
 
   private static void addRequestHeader(Map<String, String> requestHeader, String line) {

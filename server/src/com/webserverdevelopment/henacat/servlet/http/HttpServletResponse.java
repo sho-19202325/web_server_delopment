@@ -1,7 +1,7 @@
-package com.sampledomain.henacat.servlet.http;
+package com.webserverdevelopment.henacat.servlet.http;
 import java.io.*;
 
-public class HttpServletResponse {
+public interface HttpServletResponse {
   static final int SC_OK = 200;
   static final int SC_FOUND = 302;
 

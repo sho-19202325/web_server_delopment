@@ -1,4 +1,4 @@
-package com.sampledomain.henacat.servlet;
+package com.webserverdevelopment.henacat.servlet;
 
 public class ServletException {
   public ServletException(String message) {

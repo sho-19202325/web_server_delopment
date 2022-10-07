@@ -1,5 +1,5 @@
-package com.sampledomain.henacat.servlet.http;
-import com.sampledomain.henacat.servlet.*;
+package com.webserverdevelopment.henacat.servlet.http;
+import com.webserverdevelopment.henacat.servlet.*;
 
 public class HttpServlet {
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, java.io.IOException {}

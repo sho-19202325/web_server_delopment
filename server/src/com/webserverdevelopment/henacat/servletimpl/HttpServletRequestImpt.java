@@ -1,6 +1,9 @@
+package com.webserverdevelopment.henacat.servletimpl;
 import java.util.*;
 import java.io.*;
 import java.nio.charset.*;
+import com.webserverdevelopment.henacat.servlet.http.*;
+import com.webserverdevelopment.henacat.util.*;
 
 public class HttpServletRequestImpt implements HttpServletRequest {
   private String method;

@@ -1,3 +1,4 @@
+package com.webserverdevelopment.henacat.util;
 import java.io.*;
 
 class SendResponse {

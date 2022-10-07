@@ -1,9 +1,9 @@
-package com.sampledomain.henacat.servlet.http;
+package com.webserverdevelopment.henacat.servlet.http;
 import java.io.*;
 
-public class HttpServletRequest {
+public interface HttpServletRequest {
   String getMethod();
   String getParameter(String name);
-  String[] getParameter(String name);
+  String[] getParameterValues(String name);
   void setCharacterEncoding(String env) throws UnsupportedEncodingException;
 }

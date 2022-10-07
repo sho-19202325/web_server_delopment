@@ -1,6 +1,8 @@
+package com.webserverdevelopment.henacat.servletimpl;
 import java.io.*;
+import com.webserverdevelopment.henacat.servlet.http.*;
 
-public class HttpServletResponseImpl {
+public class HttpServletResponseImpl implements HttpServletResponse {
   String contentType = "application/octet-stream";
   private String characterEncoding = "ISO-8859-1";
   private OutputStream outputStream;
