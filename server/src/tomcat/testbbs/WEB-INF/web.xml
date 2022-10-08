@@ -1,0 +1,32 @@
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0"
+         metadata-complete="true"
+>
+  <servlet>
+    <servlet-name>ServletToJsp</servlet-name>
+    <servlet-class>ServletToJsp</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowBBS</servlet-name>
+    <servlet-class>ShowBBS</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PostBBS</servlet-name>
+    <servlet-class>PostBBS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowBBS</servlet-name>
+    <url-pattern>/ShowBBS</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PostBBS</servlet-name>
+    <url-pattern>/PostBBS</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletToJsp</servlet-name>
+    <url-pattern>/servletToJsp</url-pattern>
+  </servlet-mapping>
+</web-app>
