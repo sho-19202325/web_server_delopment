@@ -1,6 +1,6 @@
 package com.webserverdevelopment.henacat.servlet;
 
-public class ServletException {
+public class ServletException extends Exception {
   public ServletException(String message) {
     super(message);
   }

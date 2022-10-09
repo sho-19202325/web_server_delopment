@@ -3,9 +3,9 @@ import java.io.*;
 import java.util.*;
 import java.text.*;
 
-class Util {
+public class Util {
   // InputStreamからのバイト列を、行単位で読み込むユーティリティメソッド
-  static String readLine(InputStream input) throws Exception {
+  public static String readLine(InputStream input) throws Exception {
     int ch;
     String ret = "";
     while ((ch = input.read()) != -1) {
@@ -25,7 +25,7 @@ class Util {
   }
 
   // 1行の文字列を、バイト列としてOutputStreamに書き込むユーティリティメソッド
-  static void writeLine(OutputStream output, String str) throws Exception {
+  public static void writeLine(OutputStream output, String str) throws Exception {
     for (char ch : str.toCharArray()) {
       output.write((int)ch);
     }
@@ -34,7 +34,7 @@ class Util {
   }
   
   // 現在時刻から、HTTP標準に合わせてフォーマットされた日付文字列を返す
-  static String getDateStringUtc() {
+  public static String getDateStringUtc() {
     Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
     DateFormat df = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss", Locale.US);
     df.setTimeZone(cal.getTimeZone());
@@ -42,7 +42,7 @@ class Util {
   }
 
   // 拡張子とContent-Typeの対応表
-  static final HashMap<String, String> contentTypeMap =
+  private static final HashMap<String, String> contentTypeMap =
   new HashMap<String, String>() {{
       put("html", "text/html");
       put("htm", "text/html");
@@ -57,7 +57,7 @@ class Util {
   };
 
   // 拡張子を受け取りContent-Typeを返す
-  static String getContentType(String ext) {
+  public static String getContentType(String ext) {
     String ret = contentTypeMap.get(ext.toLowerCase());
     if (ret == null) {
       // octet-streamは任意のContent-Typeを表す

@@ -1,7 +1,7 @@
 package com.webserverdevelopment.henacat.util;
 import java.io.*;
 
-class SendResponse {
+public class SendResponse {
   public static void sendOkResponseHeader(OutputStream output, String contentType) throws Exception {
     Util.writeLine(output, "HTTP/1.1 200 OK");
     Util.writeLine(output, "Date: " + Util.getDateStringUtc());

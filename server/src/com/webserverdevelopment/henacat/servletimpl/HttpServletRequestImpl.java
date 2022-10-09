@@ -5,7 +5,7 @@ import java.nio.charset.*;
 import com.webserverdevelopment.henacat.servlet.http.*;
 import com.webserverdevelopment.henacat.util.*;
 
-public class HttpServletRequestImpt implements HttpServletRequest {
+public class HttpServletRequestImpl implements HttpServletRequest {
   private String method;
   private String characterEncoding = "ISO-8859-1";
   private Map<String, String[]> parameterMap;
@@ -16,8 +16,17 @@ public class HttpServletRequestImpt implements HttpServletRequest {
   }
 
   @Override
-  public String[] getParameter(String name) {
+  public String getParameter(String name) {
     String[] values = getParameterValues(name);
+    if (values == null) {
+      return null;
+    }
+    return values[0];
+  }
+
+  @Override
+  public String[] getParameterValues(String name) {
+    String[] values = this.parameterMap.get(name);
     if (values == null) {
       return null;
     }
@@ -40,7 +49,7 @@ public class HttpServletRequestImpt implements HttpServletRequest {
     this.characterEncoding = env;
   }
 
-  HttpServletReuqestImpl(String method, Map<String, String[]> parameterMap) {
+  HttpServletRequestImpl(String method, Map<String, String[]> parameterMap) {
     this.method = method;
     this.parameterMap = parameterMap;
   }

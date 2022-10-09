@@ -8,7 +8,7 @@ public class ServletService {
   private static HttpServlet createServlet(ServletInfo info) throws Exception {
     Class<?> clazz = info.webApp.classLoader.loadClass(info.servletClassName);
     // (type)は型キャスト
-    return (HttpServlet)clazz.newInstance();
+    return (HttpServlet)clazz.getDeclaredConstructor().newInstance();
   }
 
   // queryを受け取って、key=> [value1, value2, ...]の形で返却するmethod
@@ -60,7 +60,7 @@ public class ServletService {
     Map<String, String> requestHeader,
     InputStream input,
     OutputStream output
-  ) {
+  ) throws Exception {
     if (info.servlet == null) {
       info.servlet = createServlet(info);
     }
