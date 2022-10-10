@@ -11,6 +11,8 @@ public class ServerThread implements Runnable {
   private static final String ERROR_DOCUMENT = "/usr/src/error";
   private Socket socket;
 
+  // readListで読み出したrequest headerを
+  // 引数として受け取ったrequestHeaderオブジェクトに追加するmethod
   private static void addRequestHeader(Map<String, String> requestHeader, String line) {
     int colonPos = line.indexOf(':');
     // indexOf()は引数で指定した文字列が見つからなかった時、-1を返す
@@ -34,6 +36,10 @@ public class ServerThread implements Runnable {
       Map<String, String> requestHeader = new HashMap<String, String>();
 
       // socketに入力されたものを一行ずつ読み出す
+      // GETかPOSTで始まっている場合は、それをmethodとし、
+      // その文をrequestLineに代入する
+      // それ以外の場合は、通常のrequest headerに追加する
+
       while ((line = Util.readLine(input)) != null) {
         if (line == "") {
           break;
@@ -63,6 +69,7 @@ public class ServerThread implements Runnable {
       }
 
       // 溜め込んだデータをsocketに出力するためのインスタンスを生成
+      // OutputStreamとは出力バイトを受け付けて、特定の受け手に送るもの
       output = new BufferedOutputStream(socket.getOutputStream());
 
       // pathで指定されたディレクトリのwebアプリケーションを取得
