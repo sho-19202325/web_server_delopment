@@ -1,5 +1,6 @@
 package com.webserverdevelopment.henacat.servletimpl;
 import java.io.*;
+import java.util.*;
 import com.webserverdevelopment.henacat.servlet.http.*;
 
 public class HttpServletResponseImpl implements HttpServletResponse {
@@ -9,6 +10,7 @@ public class HttpServletResponseImpl implements HttpServletResponse {
   PrintWriter printWriter;
   int status;
   String redirectLocation;
+  ArrayList<Cookie> cookies = new ArrayList<Cookie>();
 
   @Override
   public void setContentType(String contentType) {
@@ -42,6 +44,11 @@ public class HttpServletResponseImpl implements HttpServletResponse {
   @Override
   public void setStatus(int sc) {
     this.status = sc;
+  }
+
+  @Override
+  public void addCookie(Cookie cookie) {
+    this.cookies.add(cookie);
   }
 
   HttpServletResponseImpl(OutputStream output) {

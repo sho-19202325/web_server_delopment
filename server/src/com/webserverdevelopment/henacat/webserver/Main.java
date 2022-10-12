@@ -5,13 +5,15 @@ import java.net.*;
 public class Main {
   public static void main(String[] argv) throws Exception {
     // webapplicationインスタンスを作成
-    WebApplication app = WebApplication.createInstance("testbbs");
+    WebApplication testbbs = WebApplication.createInstance("testbbs");
+    WebApplication cookietest = WebApplication.createInstance("cookietest");
 
     // webapplicationインスタンスにサーブレットを追加
     // NOTE: servletClassNameにはクラス名を指定するがShowBBSのみだと動かない。
     //       パッケージ名を含め、webapps.testbbs.ShowBBSとすること
-    app.addServlet("/ShowBBS", "webapps.testbbs.ShowBBS");
-    app.addServlet("/PostBBS", "webapps.testbbs.PostBBS");
+    testbbs.addServlet("/ShowBBS", "webapps.testbbs.ShowBBS");
+    testbbs.addServlet("/PostBBS", "webapps.testbbs.PostBBS");
+    cookietest.addServlet("/CookieTest", "webapps.cookietest.CookieTest");
 
     try (ServerSocket server = new ServerSocket(8001)) {
       for (;;) {

@@ -10,4 +10,5 @@ public interface HttpServletResponse {
   PrintWriter getWriter() throws IOException;
   void sendRedirect(String location);
   void setStatus(int sc);
+  void addCookie(Cookie cookie);
 }
