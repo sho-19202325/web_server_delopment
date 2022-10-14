@@ -20,14 +20,15 @@ public class CookieTest extends HttpServlet {
           counterStr = cookies[i].getValue();
         }
       }
-      int counter;
-      if (counterStr == null) {
-        counter = 1;
-      } else {
-        counter = Integer.parseInt(counterStr) + 1;
-      }
-      Cookie newCookie = new Cookie("COUNTER", "" + counter);
-      response.addCookie(newCookie);
     }
+
+    int counter;
+    if (counterStr == null) {
+      counter = 1;
+    } else {
+      counter = Integer.parseInt(counterStr) + 1;
+    }
+    Cookie newCookie = new Cookie("COUNTER", "" + counter);
+    response.addCookie(newCookie);
   }
 }
