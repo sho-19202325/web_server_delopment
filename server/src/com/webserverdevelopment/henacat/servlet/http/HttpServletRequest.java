@@ -7,4 +7,6 @@ public interface HttpServletRequest {
   String[] getParameterValues(String name);
   void setCharacterEncoding(String env) throws UnsupportedEncodingException;
   Cookie[] getCookies();
+  HttpSession getSession();
+  HttpSession getSession(boolean create);
 }

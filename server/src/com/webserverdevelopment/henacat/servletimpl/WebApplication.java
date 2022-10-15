@@ -7,13 +7,11 @@ import java.util.*;
 public class WebApplication {
   // サーブレットで配信するアプリケーションを格納するディレクトリ
   private static String WEBAPPS_DIR = "/usr/src/webapps";
-
   private static Map<String, WebApplication> webAppCollection = new HashMap<String, WebApplication>();
-
   String directory;
   ClassLoader classLoader;
-
   private Map<String, ServletInfo> servletCollection = new HashMap<String, ServletInfo>();
+  private SessionManager sessionManager;
 
   private WebApplication(String dir) throws MalformedURLException {
     this.directory = dir;
@@ -43,5 +41,12 @@ public class WebApplication {
 
   public static WebApplication searchWebApplication(String dir) {
     return webAppCollection.get(dir);
+  }
+
+  public SessionManager getSessionManager() {
+    if (this.sessionManager == null) {
+      this.sessionManager = new SessionManager();
+    }
+    return this.sessionManager;
   }
 }

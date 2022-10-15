@@ -7,6 +7,7 @@ public class Main {
     // webapplicationインスタンスを作成
     WebApplication testbbs = WebApplication.createInstance("testbbs");
     WebApplication cookietest = WebApplication.createInstance("cookietest");
+    WebApplication sessiontest = WebApplication.createInstance("sessiontest");
 
     // webapplicationインスタンスにサーブレットを追加
     // NOTE: servletClassNameにはクラス名を指定するがShowBBSのみだと動かない。
@@ -14,6 +15,7 @@ public class Main {
     testbbs.addServlet("/ShowBBS", "webapps.testbbs.ShowBBS");
     testbbs.addServlet("/PostBBS", "webapps.testbbs.PostBBS");
     cookietest.addServlet("/CookieTest", "webapps.cookietest.CookieTest");
+    sessiontest.addServlet("/SessionTest", "webapps.sessiontest.SessionTest");
 
     try (ServerSocket server = new ServerSocket(8001)) {
       for (;;) {

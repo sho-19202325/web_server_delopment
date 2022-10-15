@@ -8,6 +8,7 @@ public class SendResponse {
     Util.writeLine(output, "Server: Henacat/0.1");
     Util.writeLine(output, "Connection: close");
     Util.writeLine(output, "Content-type:" + contentType);
+    hg.generate(output);
     Util.writeLine(output, "");
   }
 
