@@ -1,19 +1,20 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-    <title>テストフォーム</title>
+    <title>?e?X?g?t?H?[??</title>
   </head>
   <body>
-    <form action="http://localhost:81/posttest/Posttest" method="post" enctype="multipart/form-data">
-      テキストボックス：<input type="text" name="text_name"><br/>
-      パスワード：<input type="password" name="password_name"><br/>
-      テキストエリア：<br/>
+    <!-- <form action="http://localhost:81/posttest/Posttest" method="post" enctype="multipart/form-data"> -->
+    <form action="http://localhost:8090/uploadtest/UploadTest" method="post" enctype="multipart/form-data">
+      ?e?L?X?g?{?b?N?X?F<input type="text" name="text_name"><br/>
+      ?p?X???[?h?F<input type="password" name="password_name"><br/>
+      ?e?L?X?g?G???A?F<br/>
       <textarea name="textarea_name" cols="40" rows="4">
       </textarea>
       <table boarder="1">
         <tr>
           <td>
-            ラジオボタン：<br/>
+            ???W?I?{?^???F<br/>
             <input type="radio" name="radio_name" value="radio1"/>1
             <input type="radio" name="radio_name" value="radio2"/>2
             <input type="radio" name="radio_name" value="radio3"/>3
@@ -22,7 +23,7 @@
         </tr>
         <tr>
           <td>
-            チェックボックス；<br/>
+            ?`?F?b?N?{?b?N?X?G<br/>
             <input type="checkbox" name="check_name" value="check1"/>1
             <input type="checkbox" name="check_name" value="check2"/>2
             <input type="checkbox" name="check_name" value="check3"/>3
@@ -30,9 +31,9 @@
           </td>
         </tr>
       </table>
-      <input type="hidden" name="hidden_name" value="hidden_value日本語"/>
-      ファイルアップロード：<input type="file" name="file_name" id=""/><br/>
-      <input type="submit" name="submit_name" value="送るよ!"/>
+      <input type="hidden" name="hidden_name" value="hidden_value???{??"/>
+      ?t?@?C???A?b?v???[?h?F<input type="file" name="file_name" id=""/><br/>
+      <input type="submit" name="submit_name" value="?????!"/>
     </form>
   </body>
 </html>
